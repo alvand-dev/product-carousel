@@ -9,8 +9,8 @@ const sliderNext = document.querySelector('#new-product .slider-arrow-next');
 const sliderPrev = document.querySelector('#new-product .slider-arrow-prev');
 
 // Define variables
-let itemIndex = 0;
 let numberOfItems;
+let itemIndex;
 
 // Define media queries
 const mediaQueryList = [
