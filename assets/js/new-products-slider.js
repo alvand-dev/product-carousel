@@ -19,7 +19,8 @@ const mediaQueryList = [
 // Display slider items
 const displayItems = () => {
   let html = '';
-  for(let i = itemIndex; i < itemIndex + numberOfItems; i++) {
+  let len = itemIndex + numberOfItems;
+  for(let i = itemIndex; i < len; i++) {
     html += sliderItems[i].outerHTML;
   }
   sliderList.innerHTML = html;
@@ -29,6 +30,7 @@ const displayItems = () => {
 const HandleScreen = () => {
   if(mediaQueryList[0].matches) {
     numberOfItems = 1;
+    itemIndex = 0;
     sliderItems.forEach((item) => {
       item.style.width = '100%';
       item.style.minHeight = '150px';
@@ -36,6 +38,7 @@ const HandleScreen = () => {
   }
   else if(mediaQueryList[1].matches) {
     numberOfItems = 2;
+    itemIndex = 0;
     sliderItems.forEach((item) => {
       item.style.width = '50%';
       item.style.minHeight = '150px';
@@ -43,6 +46,7 @@ const HandleScreen = () => {
   }
   else {
     numberOfItems = 3;
+    itemIndex = 0;
     sliderItems.forEach((item) => {
       item.style.width = '35%';
       item.style.minHeight = '150px';
