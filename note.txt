@@ -1,0 +1,4 @@
+responsiveness check
+finished in chrome
+
+When its on the last slide and I switch from small screen to larger screen, number of items does no change.
