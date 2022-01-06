@@ -1,3 +1,5 @@
-note.txt
+# ignored files
+*.txt
 
+# ignored folders
 bk
