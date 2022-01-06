@@ -5,6 +5,8 @@
 .slider-container {
   padding: 10px;
   background-color: #2196f3;
+  max-width: 1170px;
+  margin: auto;
 }
 
 .slider-list {
