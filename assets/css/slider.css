@@ -1,16 +1,38 @@
+/* Basic styles */
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 5px 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #212121;
 }
+
+h2 {
+  font-weight: normal;
+  border-bottom: 1px dotted #bdbdbd;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.bg-red {
+  background-color: #ff5252 !important;
+}
+
+.container {
+  max-width: 1170px;
+  margin: auto;
+}
+
+/* Slider Styles */
 
 .slider-container {
   padding: 10px;
   background-color: #2196f3;
-  max-width: 1170px;
-  margin: 10px auto;
+  border: 1px solid #757575;
+  margin: auto;
 }
 
 .slider-list {
@@ -42,4 +64,18 @@ body {
   display: flex;
   justify-content: space-between;
   height: 30px;
+}
+
+.slider-arrow-prev,
+.slider-arrow-next {
+  border: none;
+  background-color: #ffffff;
+  color: #212121;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.slider-arrow-prev:hover,
+.slider-arrow-next:hover {
+  background-color: #eeeeee;
 }
