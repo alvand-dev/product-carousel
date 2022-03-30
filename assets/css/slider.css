@@ -3,12 +3,7 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  margin: 0 15px;
+  margin: 5px 10px;
 }
 
 .slider-container {
