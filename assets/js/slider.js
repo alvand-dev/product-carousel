@@ -1,83 +1,88 @@
-"use strict";
+'use strict';
 
 {
-  // Get HTML elements
-  const sliderList = document.querySelector(".slider-list");
-  const sliderItems = document.querySelectorAll(".slider-item");
-  const sliderNext = document.querySelector(".slider-arrow-next");
-  const sliderPrev = document.querySelector(".slider-arrow-prev");
-
-  // Define variables
-  let numberOfItems;
-  let itemIndex;
-
-  // Define media queries
-  const mediaQueryList = [
-    window.matchMedia("(max-width: 650px)"),
-    window.matchMedia("(max-width: 991px)"),
-  ];
-
-  // Display slider items
-  const displayItems = () => {
-    let html = "";
-    let len = itemIndex + numberOfItems;
-    for (let i = itemIndex; i < len; i++) {
-      html += sliderItems[i].outerHTML;
+  // A template class for sliders
+  class Slider {
+    constructor(id, mediaQuery) {
+      // Get HTML elements
+      this.slider = document.querySelector(`#${id}`);
+      this.sliderList = this.slider.querySelector('.slider-list');
+      this.sliderItems = this.slider.querySelectorAll('.slider-item');
+      this.sliderNext = this.slider.querySelector('.slider-arrow-next');
+      this.sliderPrev = this.slider.querySelector('.slider-arrow-prev');
+      this.mediaQueryList = [
+        window.matchMedia(`screen and (max-width:${mediaQuery[0] - 1}px)`),
+      ];
+      mediaQuery.forEach((item) => {
+        this.mediaQueryList.push(
+          window.matchMedia(`screen and (min-width:${item}px)`)
+        );
+      });
+      // Define global variables
+      this.numberOfItems;
+      this.itemIndex;
+      this.flag = true;
     }
-    sliderList.innerHTML = html;
-  };
 
-  // Handel number of slides and set slides height and width
-  const HandleScreen = () => {
-    if (mediaQueryList[0].matches) {
-      numberOfItems = 1;
-      itemIndex = 0;
-      // set width and height to item for when image does not load
-      sliderItems.forEach((item) => {
-        item.style.width = "100%";
-        item.style.minHeight = "150px";
+    // Handel number of slides and set slides width + event listeners
+    run() {
+      this.mediaQueryList.forEach((mediaQuery, index) => {
+        if (mediaQuery.matches) {
+          this.numberOfItems = index + 1;
+          this.itemIndex = 0;
+          this.sliderItems.forEach((item) => {
+            item.style.width = `${100 / this.numberOfItems}%`;
+          });
+        }
       });
-    } else if (mediaQueryList[1].matches) {
-      numberOfItems = 2;
-      itemIndex = 0;
-      // set width and height to item for when image does not load
-      sliderItems.forEach((item) => {
-        item.style.width = "50%";
-        item.style.minHeight = "150px";
-      });
-    } else {
-      numberOfItems = 3;
-      itemIndex = 0;
-      // set width and height to item for when image does not load
-      sliderItems.forEach((item) => {
-        item.style.width = "35%";
-        item.style.minHeight = "150px";
-      });
+
+      // Run displayItems function
+      this.displayItems();
+
+      // Event listeners
+      if (this.flag === true) {
+        // Add listener to media-queries to call the run function again when screen resized
+        this.mediaQueryList.forEach((mediaQuery) => {
+          mediaQuery.addEventListener('change', () => {
+            this.run();
+          });
+        });
+
+        // Diplay next slide
+        this.sliderNext.addEventListener('click', () => {
+          if (this.itemIndex < this.sliderItems.length - this.numberOfItems) {
+            this.itemIndex++;
+            this.displayItems();
+          }
+        });
+
+        // Display Previous slide
+        this.sliderPrev.addEventListener('click', () => {
+          if (this.itemIndex > 0) {
+            this.itemIndex--;
+            this.displayItems();
+          }
+        });
+
+        // Prevent adding event listener each time run function called
+        this.flag = false;
+      }
     }
-    displayItems();
-  };
 
-  // Run handel screen function for the first time
-  HandleScreen();
-
-  // Add listener to media query list items
-  for (let i = 0; i < mediaQueryList.length; i++) {
-    mediaQueryList[i].addListener(HandleScreen);
+    // Display slider items
+    displayItems() {
+      let html = '';
+      let len = this.itemIndex + this.numberOfItems;
+      for (let i = this.itemIndex; i < len; i++) {
+        html += this.sliderItems[i].outerHTML;
+      }
+      this.sliderList.innerHTML = html;
+    }
   }
 
-  // Diplay next slide
-  sliderNext.addEventListener("click", function () {
-    if (itemIndex < sliderItems.length - numberOfItems) {
-      itemIndex++;
-      displayItems();
-    }
-  });
+  // Create a new slider and run it
+  new Slider('new-products', [576, 992]).run();
 
-  // Display Previous slide
-  sliderPrev.addEventListener("click", function () {
-    if (itemIndex > 0) {
-      itemIndex--;
-      displayItems();
-    }
-  });
+  // Create a new slider and run it
+  new Slider('featured-products', [576, 768, 992]).run();
 }

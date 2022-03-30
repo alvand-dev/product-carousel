@@ -6,6 +6,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   margin: 0 15px;
 }
@@ -14,7 +15,7 @@ body {
   padding: 10px;
   background-color: #2196f3;
   max-width: 1170px;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .slider-list {
@@ -32,12 +33,14 @@ body {
 }
 
 .slider-item {
-  background-color: gray;
+  background-color: #aaaaaa;
   margin-bottom: -4px;
+  min-height: 150px;
+  width: 100%;
 }
 
 .slider-item img {
-  max-width: 100%;
+  width: 100%;
 }
 
 .slider-arrows {
