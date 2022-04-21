@@ -37,6 +37,10 @@ h2 {
   max-height: 100vh;
 }
 
+.slides-container {
+  padding: 0 10px;
+}
+
 .slider-list {
   list-style-type: none;
   margin: 0;
@@ -44,12 +48,12 @@ h2 {
   display: flex;
   overflow: hidden;
   transition: 1s;
-  max-height: calc(100vh - 80px) ;
+  max-height: calc(100vh - 80px);
 }
 
 .slider-item {
-  background-color: #BDBDBD;
-  margin: 0 8px -4px;
+  background-color: #bdbdbd;
+  margin: 0 16px -4px 0;
   min-height: 150px;
 }
 

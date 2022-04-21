@@ -67,9 +67,9 @@
           this.sliderList.style.transform = 'translateX(0)';
 
           // Set slider list width
-          this.sliderList.style.width = `${
+          this.sliderList.style.width = `calc(${
             (100 / this.numberOfVisibleItems) * this.sliderItemsLength
-          }%`;
+          }% + ${(this.sliderItemsLength / this.numberOfVisibleItems) * 16}px)`;
 
           // Set slides width
           this.sliderItems.forEach((item) => {
