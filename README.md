@@ -18,38 +18,40 @@ Each `li` tag with the class of `slider-item` is a single slide. You can add mor
 
 ```
 <div class="slider-container" id="sample-slider">
-  <ul class="slider-list">
-    <li class="slider-item">
-      <a href="slide-link-url">
-        <img src="slide-image-file-url" alt="image alternative text" />
-      </a>
-    </li>
-    <li class="slider-item">
-      <a href="slide-link-url">
-        <img src="slide-image-file-url" alt="image alternative text" />
-      </a>
-    </li>
-    <li class="slider-item">
-      <a href="slide-link-url">
-        <img src="slide-image-file-url" alt="image alternative text" />
-      </a>
-    </li>
-    <li class="slider-item">
-      <a href="slide-link-url">
-        <img src="slide-image-file-url" alt="image alternative text" />
-      </a>
-    </li>
-    <li class="slider-item">
-      <a href="slide-link-url">
-        <img src="slide-image-file-url" alt="image alternative text" />
-      </a>
-    </li>
-    <li class="slider-item">
-      <a href="slide-link-url">
-        <img src="slide-image-file-url" alt="image alternative text" />
-      </a>
-    </li>
-  </ul>
+  <div class="slides-container">
+    <ul class="slider-list">
+      <li class="slider-item">
+        <a href="slide-link-url">
+          <img src="slide-image-file-url" alt="image alternative text" />
+        </a>
+      </li>
+      <li class="slider-item">
+        <a href="slide-link-url">
+          <img src="slide-image-file-url" alt="image alternative text" />
+        </a>
+      </li>
+      <li class="slider-item">
+        <a href="slide-link-url">
+          <img src="slide-image-file-url" alt="image alternative text" />
+        </a>
+      </li>
+      <li class="slider-item">
+        <a href="slide-link-url">
+          <img src="slide-image-file-url" alt="image alternative text" />
+        </a>
+      </li>
+      <li class="slider-item">
+        <a href="slide-link-url">
+          <img src="slide-image-file-url" alt="image alternative text" />
+        </a>
+      </li>
+      <li class="slider-item">
+        <a href="slide-link-url">
+          <img src="slide-image-file-url" alt="image alternative text" />
+        </a>
+      </li>
+    </ul>
+  </div>
   <div class="slider-arrows">
     <button type="button" class="slider-arrow-prev">Prev</button>
     <button type="button" class="slider-arrow-next">Next</button>
