@@ -18,8 +18,8 @@
       });
 
       // Define global variables
-      this.numberOfVisibleItems;
-      this.currentItemIndex;
+      this.numberOfVisibleItems = null;
+      this.currentItemIndex = null;
       this.sliderItemsLength = this.sliderItems.length;
       this.mediaQueryLength = this.mediaQueryList.length;
 
