@@ -1,6 +1,6 @@
-'use strict';
+(function () {
+  'use strict';
 
-{
   // A class for building sliders from it
   class Slider {
     constructor(id, mediaQueries) {
@@ -12,13 +12,9 @@
       this.sliderPrev = this.slider.querySelector('.slider-arrow-prev');
 
       // Get media queries
-      this.mediaQueryList = [
-        window.matchMedia(`screen and (max-width:${mediaQueries[0] - 1}px)`),
-      ];
+      this.mediaQueryList = [window.matchMedia(`screen and (max-width:${mediaQueries[0] - 1}px)`)];
       mediaQueries.forEach((mediaQuery) => {
-        this.mediaQueryList.push(
-          window.matchMedia(`screen and (min-width:${mediaQuery}px)`)
-        );
+        this.mediaQueryList.push(window.matchMedia(`screen and (min-width:${mediaQuery}px)`));
       });
 
       // Define global variables
@@ -36,10 +32,7 @@
 
       // Add event listener: to go to next slide
       this.sliderNext.addEventListener('click', () => {
-        if (
-          this.currentItemIndex <
-          this.sliderItemsLength - this.numberOfVisibleItems
-        ) {
+        if (this.currentItemIndex < this.sliderItemsLength - this.numberOfVisibleItems) {
           this.currentItemIndex++;
           this.shiftSlides();
         }
@@ -67,9 +60,7 @@
           this.sliderList.style.transform = 'translateX(0)';
 
           // Set slider list width
-          this.sliderList.style.width = `calc(${
-            (100 / this.numberOfVisibleItems) * this.sliderItemsLength
-          }% + ${(this.sliderItemsLength / this.numberOfVisibleItems) * 16}px)`;
+          this.sliderList.style.width = `calc(${(100 / this.numberOfVisibleItems) * this.sliderItemsLength}% + ${(this.sliderItemsLength / this.numberOfVisibleItems) * 16}px)`;
 
           // Set slides width
           this.sliderItems.forEach((item) => {
@@ -85,9 +76,7 @@
 
     // A function to shift slides left and right
     shiftSlides() {
-      this.sliderList.style.transform = `translateX(-${
-        (100 / this.sliderItemsLength) * this.currentItemIndex
-      }%`;
+      this.sliderList.style.transform = `translateX(-${(100 / this.sliderItemsLength) * this.currentItemIndex}%`;
     }
   }
 
@@ -102,4 +91,4 @@
 
   // Create a new slider and run it
   new Slider('featured-products', [576, 768, 992]).run();
-}
+})();
