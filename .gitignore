@@ -1,2 +1,6 @@
-# ignored folders
+# Ignore testing and local files/folders
 hidden
+node_modules
+package.json
+package-lock.json
+.eslintrc.json
