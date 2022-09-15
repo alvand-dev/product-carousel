@@ -32,9 +32,12 @@ h2 {
   padding: 10px 0;
   background-color: #2196f3;
   border: 1px solid #757575;
+  max-height: 100vh;
+}
+
+.slides-wrapper {
   margin: auto;
   overflow: hidden;
-  max-height: 100vh;
 }
 
 .slides-container {
