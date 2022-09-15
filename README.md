@@ -10,7 +10,7 @@ First, download the repository. Then, do the next steps.
 
 In the **index.html** file of **this repository root folder**, you can find, edit, or add slider's HTML codes.
 
-Just copy and paste the `div` tag with `slider-container` class attribute value and change it's `id` attribute value to your prefrered one.
+Just copy and paste the `div` tag with `slider-container` class attribute value and change it's `id` attribute value to your suitable one.
 
 Each `li` tag with the class of `slider-item` is a single slide. You can add more slides, remove some of them, and edit slide (`slide-link-url`, `slide-image-file-url`, and `image alternative text`) as you wish.
 
@@ -18,39 +18,41 @@ Each `li` tag with the class of `slider-item` is a single slide. You can add mor
 
 ```
 <div class="slider-container" id="sample-slider">
-  <div class="slides-container">
-    <ul class="slider-list">
-      <li class="slider-item">
-        <a href="slide-link-url">
-          <img src="slide-image-file-url" alt="image alternative text" />
-        </a>
-      </li>
-      <li class="slider-item">
-        <a href="slide-link-url">
-          <img src="slide-image-file-url" alt="image alternative text" />
-        </a>
-      </li>
-      <li class="slider-item">
-        <a href="slide-link-url">
-          <img src="slide-image-file-url" alt="image alternative text" />
-        </a>
-      </li>
-      <li class="slider-item">
-        <a href="slide-link-url">
-          <img src="slide-image-file-url" alt="image alternative text" />
-        </a>
-      </li>
-      <li class="slider-item">
-        <a href="slide-link-url">
-          <img src="slide-image-file-url" alt="image alternative text" />
-        </a>
-      </li>
-      <li class="slider-item">
-        <a href="slide-link-url">
-          <img src="slide-image-file-url" alt="image alternative text" />
-        </a>
-      </li>
-    </ul>
+  <div class="slides-wrapper">
+    <div class="slides-container">
+      <ul class="slider-list">
+        <li class="slider-item">
+          <a href="slide-link-url">
+            <img src="slide-image-file-url" alt="image alternative text" />
+          </a>
+        </li>
+        <li class="slider-item">
+          <a href="slide-link-url">
+            <img src="slide-image-file-url" alt="image alternative text" />
+          </a>
+        </li>
+        <li class="slider-item">
+          <a href="slide-link-url">
+            <img src="slide-image-file-url" alt="image alternative text" />
+          </a>
+        </li>
+        <li class="slider-item">
+          <a href="slide-link-url">
+            <img src="slide-image-file-url" alt="image alternative text" />
+          </a>
+        </li>
+        <li class="slider-item">
+          <a href="slide-link-url">
+            <img src="slide-image-file-url" alt="image alternative text" />
+          </a>
+        </li>
+        <li class="slider-item">
+          <a href="slide-link-url">
+            <img src="slide-image-file-url" alt="image alternative text" />
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
   <div class="slider-arrows">
     <button type="button" class="slider-arrow-prev">Prev</button>
