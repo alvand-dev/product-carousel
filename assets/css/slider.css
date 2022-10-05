@@ -10,6 +10,11 @@ body {
   margin: 10px;
 }
 
+header {
+  text-align: center;
+}
+
+h1,
 h2 {
   font-weight: normal;
   border-bottom: 1px dotted #bdbdbd;
