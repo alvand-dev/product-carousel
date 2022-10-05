@@ -53,6 +53,16 @@
           element.tabIndex = '-1';
         });
       });
+
+      // Add event listener: to scroll down to slider when previous arrow focused
+      this.sliderPrev.addEventListener('focusin', () => {
+        this.slider.scrollIntoView();
+      });
+
+      // Add event listener: to scroll down to slider when next arrow focused
+      this.sliderNext.addEventListener('focusin', () => {
+        this.slider.scrollIntoView();
+      });
     }
 
     // Run the slider
