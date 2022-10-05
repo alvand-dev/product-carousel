@@ -46,15 +46,12 @@
         }
       });
 
-      // Add event listener: to disable focus on slides
+      // Disable focus on all slides links
       this.sliderItems.forEach((item) => {
-        item.querySelector('a').tabIndex = '-1';
-      });
-
-      // Reset the slider if focus came inside slider list
-      this.sliderList.addEventListener('focusin', () => {
-        this.currentItemIndex = 0;
-        this.sliderList.style.transform = 'translateX(0%)';
+        const elements = item.querySelectorAll('a');
+        elements.forEach((element) => {
+          element.tabIndex = '-1';
+        });
       });
     }
 
