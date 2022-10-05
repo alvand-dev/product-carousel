@@ -50,6 +50,12 @@
       this.sliderItems.forEach((item) => {
         item.querySelector('a').tabIndex = '-1';
       });
+
+      // Reset the slider if focus came inside it
+      this.sliderList.addEventListener('focusin', () => {
+        this.currentItemIndex = 0;
+        this.sliderList.style.transform = 'translateX(0%)';
+      });
     }
 
     // Run the slider
