@@ -51,7 +51,7 @@
         item.querySelector('a').tabIndex = '-1';
       });
 
-      // Reset the slider if focus came inside it
+      // Reset the slider if focus came inside slider list
       this.sliderList.addEventListener('focusin', () => {
         this.currentItemIndex = 0;
         this.sliderList.style.transform = 'translateX(0%)';
